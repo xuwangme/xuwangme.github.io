@@ -10,6 +10,10 @@ tags:
     - latex
 ---
 
-我们假设单位向量![](http://latex.codecogs.com/gif.latex?\\u=cos\theta i+sin\theta j，怎么肥四
+我们假设单位向量
+![](http://latex.codecogs.com/gif.latex?u=cos\\theta i+sin\\theta j
+怎么肥四
 
 ![](http://latex.codecogs.com/gif.latex?\\frac{\\partial J}{\\partial \\theta_k^{(j)}}=\\sum_{i:r(i,j)=1}{\\big((\\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\\big)x_k^{(i)}}+\\lambda \\xtheta_k^{(j)})
+
+![](http://latex.codecogs.com/gif.latex?\\theta
