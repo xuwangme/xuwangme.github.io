@@ -23,5 +23,6 @@ formula5: \(k==z\)
 
 formula6: \[k!=z\]
 
-我们假设单位向量$u=cos\theta i+sin\theta j$怎么肥四
+我们假设单位向量$$u=cos\theta i+sin\theta j$$怎么肥四
+<br>
  $$D_uf(x,y)=f_x(x,y)cos\theta+f_y(x,y)sin\theta$$
