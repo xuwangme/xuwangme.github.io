@@ -3,8 +3,8 @@ title: Wax Blog
 SEOTitle: Wax的博客 | Wax Blog
 header-img: img/home-bg.jpg
 email: xuwang.me@gmail.com
-description: "关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
-keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
+description: "关于AI与机器学习、深度学习 | Wax，Algorithm & Mobile Lover，Algorithm Engineer | 这里是 @Wax 的个人博客，与你一起探索未知的世界。"
+keyword: "Wax, Wax的博客, Wax Blog, machine learning, deep leaning, 博客, 个人网站, 互联网, 机器学习, 深度学习"
 url: "https://xuwangme.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -67,7 +67,7 @@ ga_domain: xuwangme.github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，<br>离开世界之前，一切都是过程"
+sidebar-about-description: "Do more, know more, be more!"
 sidebar-avatar: /img/avatar-wax.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
