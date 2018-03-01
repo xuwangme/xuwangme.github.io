@@ -16,8 +16,11 @@ tags:
 * * *
 #### 批梯度下降法（batch gradient descent）、随机梯度下降法（stochastic gradient descent）
 > **date:** January 30, 2018 1:45 PM
+<br>
 > **auther:** xuwang
+<br>
 > **mail:** xuwang.me@gmail.com
+<br>
 > **outline:** 本文主要介绍了机器学习算法中的梯度下降法（批梯度下降法和随机梯度下降法），主要可用于linear regression等方法中的参数确定（通过最小化cost function）；梯度下降法主要包括批梯度下降法和随机梯度下降法等，除此之外还包括小批量梯度下降法（Mini-batch Gradient Descent）等（本文不着重分析介绍）。
 
 
@@ -45,13 +48,19 @@ tags:
 
 则$$u$$方向的方向导数为：
 <br>
+<br>
+<center>
 ​                                                   $$D_uf={\lim\limits_{t \to 0}\frac{f(x_0+tcos\theta,y_0+tsin\theta)-f(x_0,yx-0)}{t}}$$
+</center>
+<br>
 <br>
 上面的极限值即为$$f$$沿着$$u$$方向的方向导数，随着$$\theta$$的不同，即可求出任意方向的方向导数。
 
 除此之外，方向导数还可以用偏微分的方法来计算，如下所示：
 <br>
+<br>
 ​                                                $$D_uf(x,y)=f_x(x,y)cos\theta+f_y(x,y)sin\theta$$
+<br>
 <br>
 
 
@@ -61,7 +70,9 @@ tags:
 
 我们如果将梯度向量记为向量$$A$$，那么我们可以将$$D_uf(x,y)=f_x(x,y)cos\theta+f_y(x,y)sin\theta$$表示为：
 <br>
+<br>
 ​                                          $$D_uf(x,y)=A\cdot u=|A|*|u|*cos\alpha$$
+<br>
 <br>
 其中$$\alpha$$为方向向量$$u$$和梯度向量$$A$$的夹角，当且仅当两个向量平行时，即$$cos\alpha$$为1时，方向导数的值去最大值，此时方向导数的方向即为梯度的方向，导数的含义时函数单位长度内的增量，那么我们可以知道，在梯度方向上函数增长最快。
 
@@ -69,17 +80,23 @@ tags:
 
 梯度下降法主要用于在给定目标条件下求解模型的参数（parameter），如在linear regression中，我们有hypotheses函数$$h$$如下所示：
 <br>
+<br>
 ​                                                 $$h_\theta(X^{(i)})=\theta_0+\theta_1x_1^{(i)}+...\theta_nx_n^{(i)}$$
+<br>
 <br>
 即：
 <br>
+<br>
 ​                                                 $$h_\theta(X^{(i)})=\sum\limits_{j=0}^n\theta_jx_j=\theta^TX^{(i)}$$
+<br>
 <br>
 其中，$$\theta^T=[\theta_0,\theta_1,...,\theta_n]$$，$$X^{(i)}=[1,x_1^{(i)},...,x_n^{(i)}]$$，$$n$$为每个样本特征数，一共有$$m$$个样本，$$X^{(I)}$$表示第$$i$$个样本。
 
 我们在确定模型的参数$$\theta^T$$时，要尽可能的让线性函数$$h_\theta(X^{(i)})$$拟合出来的值与实际值$$y^{(i)}$$相近（最好相等）。因此我们定义$$cost\ function$$：
 <br>
+<br>
 $$J(\theta)=\frac{1}{2}\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})^2$$
+<br>
 <br>
 即，让$$J(\theta)$$的值尽可能的小，找到让$$J(\theta)$$值最小的$$\theta$$的值。
 
@@ -89,7 +106,9 @@ $$J(\theta)=\frac{1}{2}\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})^2$$
 
 在批梯度下降法中，我们从对$$\theta$$的值的随机初始化开始，即随机初始化一个$$\theta$$点：$$\theta^T=[\theta_0,\theta_1,...,\theta_n]$$，在吴恩达的machine learning中将其称为"initial guess"，然后通过不断重复的更改$$\theta$$的值使得$$J(\theta)$$的值越来越小，最终达到最小值。其中，$$\theta$$值的改变遵循如下公式：
 <br>
+<br>
 $$\theta_j :=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)$$
+<br>
 <br>
 其中，$$\alpha$$称为$$learning\ rate$$，$$\alpha$$的值如果过小，将会导致迭代的次数过多，经过很漫长的时间才能收敛，$$\alpha$$的值如果过大，将会导致达不到$$J(\theta)$$的最小值，而是在最小值附近来回震荡。
 
@@ -97,7 +116,9 @@ $$\theta_j :=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)$$
 
 我们对$$\frac{\partial}{\partial\theta_j}J(\theta)$$进行进一步的运算求解可以得到如下的式子：
 <br>
+<br>
 $$\frac{\partial}{\partial\theta_j}J(\theta) = \frac{\partial}{\partial\theta_j}\frac{1}{2}\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})^2\\ \quad\quad\quad\ =\sum\limits_{i=1}^m2\cdot\frac{1}{2}(h_\theta(X^{(i)})-y^{(i)})\cdot\frac{\partial}{\partial\theta_j}(h_\theta(X^{(i)})-y^{(i)})\\\quad\quad\quad\ =\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})\cdot\frac{\partial}{\partial\theta_j}(h_\theta(X^{(i)})-y^{(i)})\\\quad\quad\quad\ =\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})\cdot x_j^{(i)}$$
+<br>
 <br>
 上式中$$\frac{\partial}{\partial\theta_j}(h_\theta(X^{(i)})-y^{(i)})$$对$$\theta_j$$求偏导的结果是$$(h_\theta(X^{(i)})-y^{(i)})$$中$$\theta_j$$的系数$$x_j^{(i)}$$。
 
@@ -109,7 +130,9 @@ $$\theta_j :=\theta_j-\alpha\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})\cdot 
 
 但是，仔细观察我们便可以发现，每进行一次迭代，我们需要将m个样本的值都带进去进行一次求和（即批梯度下降），我们可以得到批梯度下降的算法如下：
 <br>
+<br>
 ​                                 $$Repeat\ until\ convergence\{\\\quad\quad\theta_j:=\theta_j-\alpha\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})\cdot x_j^{(i)}\quad (for\ every\ j)\\\}$$
+<br>
 <br>
 在样本数不多的情况下这种迭代是可以的，但如果在样本数很大，几十万个样本时，我们进行一次迭代都要花很久的时间，更不用说找到最终的$$\theta$$值了，因此在样本数量很多的情况下，随机梯度下降（stochastic gradient descent）就排上了用场。
 
@@ -119,7 +142,9 @@ $$\theta_j :=\theta_j-\alpha\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})\cdot 
 
 在随机梯度下降法中，我们不用每进行一次$$\theta_j$$值的update必须计算所有样本的值，而是每次只选择其中一个样本的值进行计算，随机梯度下降算法如下所示：
 <br>
+<br>
 ​                                 $$Repeat\ until\ convergence\{\\\quad\quad for\ i=1\ to\ m,\{\\\quad\quad\theta_j=\theta_j-\alpha(h_\theta(X^{(i)})-y^{(i)})\cdot x_j^{(i)}\quad (for\ every\ j)\\\quad\quad\}\\\}$$
+<br>
 <br>
 在上面的算法中，我们对$$\theta_j$$的每次update只需要代入一个训练样本即可（批梯度下降法则需要遍历整个样本集进行计算）。
 
@@ -131,7 +156,9 @@ $$\theta_j :=\theta_j-\alpha\sum\limits_{i=1}^m(h_\theta(X^{(i)})-y^{(i)})\cdot 
 
 小批量梯度下降法是批量梯度下降法和随机梯度下降法的折衷，也就是对于$$m$$个样本，我们采用$$x$$个样本来迭代，$$1<x<m$$。一般可以取$$x=10$$，当然根据样本的数据，可以调整这个$$x$$的值。对应的更新公式是：
 <br>
+<br>
 $$\theta_j :=\theta_j-\alpha\sum\limits_{i=t}^{t+x}(h_\theta(X^{(i)})-y^{(i)})\cdot x_j^{(i)}$$
+<br>
 <br>
 每次从样本集中随机抽取一小批进行训练。
 
