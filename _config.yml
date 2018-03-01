@@ -67,7 +67,7 @@ ga_domain: xuwangme.github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Do more, know more, be more!"
+sidebar-about-description: "遇见未来不可思议的自己"
 sidebar-avatar: /img/avatar-wax.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
