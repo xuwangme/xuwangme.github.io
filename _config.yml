@@ -94,3 +94,5 @@ friends: [
         href: "http://huangxuan.me/"
     }
 ]
+
+theme: jekyll-theme-cayman
