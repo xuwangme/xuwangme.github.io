@@ -1,10 +1,10 @@
 # Site settings
-title: Xu Blog
-SEOTitle: Xu的博客 | Xu Blog
+title: xuwang.me
+SEOTitle: Xu的博客 | xuwang.me
 header-img: img/home-bg.jpg
 email: xuwang.me@gmail.com
 description: "关于AI与机器学习、深度学习 | Xu，Algorithm & Mobile Lover，Software Engineer | 这里是 @Xu 的个人博客，记录Java、算法、Linux、数据库、机器学习、深度学习的知识，与你一起探索未知的世界。"
-keyword: "Xu, Xu的博客, Xu Blog, Java, Algorithm, Linux, machine learning, deep leaning, 博客, 个人网站, 互联网, 机器学习, 深度学习"
+keyword: "Xu, Xu的博客, xuwang.me, Java, Algorithm, Linux, machine learning, deep leaning, 博客, 个人网站, 互联网, 机器学习, 深度学习"
 url: "https://xuwangme.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
