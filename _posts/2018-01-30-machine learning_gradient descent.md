@@ -3,7 +3,7 @@ layout:     post
 title:      "gradient descent"
 subtitle:   " \"machine learning 梯度下降法\""
 date:       2017-12-29 12:00:00
-author:     "Wax"
+author:     "Xu"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:

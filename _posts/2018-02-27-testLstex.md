@@ -3,7 +3,7 @@ layout:     post
 title:      "latex"
 subtitle:   " \"latex 测试\""
 date:       2018-02-27 12:00:00
-author:     "Wax"
+author:     "Xu"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:

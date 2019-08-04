@@ -7,7 +7,7 @@ author:     "Xu"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - Java
+    - Java 并发
 ---
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
