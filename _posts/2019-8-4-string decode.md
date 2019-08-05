@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "字符串解码问题汇总"
+title:      "[一天一题] 字符串解码问题汇总"
 subtitle:   " \"字符串解码问题汇总\""
 date:       2019-8-4 16:34:00
 author:     "Xu"
@@ -20,7 +20,6 @@ tags:
 </br>
 > Created Data: 2019/05/06  &emsp; Modified Data: 2019/05/06
 
-### 难度: Medium
 
 #### 1. 题目1
 

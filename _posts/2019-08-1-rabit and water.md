@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "兔子验水"
+title:      "[一天一题] 兔子验水"
 subtitle:   " \"兔子验水 位运算\""
 date:       2019-8-1 21:54:00
 author:     "Xu"
@@ -18,8 +18,6 @@ tags:
 > Mail: xuwang.me@gmail.com </br>
 > Created Data: 2019/08/01  &emsp; Modified Data: 2019/08/01
 ---
-
-### 难度：Hard
 
 #### 1. 题目
 
