@@ -94,45 +94,22 @@ def completePack(f, c, w)
 
 
 
-#### 7. Java代码实现
+#### 7. Java代码实现：O(VN)算法
 
 ```java
-class Solution {
-    public int solve(int[] w, int[] c, int N, int V){
+class Solution{
+    public int solve(int[] w, int[] c, int V){
         int[] f = new int[V+1];//初始化为0
-        for (int i = 0; i < N; i++){
-            zeroOnePack(f, w[i], c[i]);
+        for (int i = 0; i < c.length; i++){
+            completePack(f, w[i], c[i]);
         }
         return f[V];
     }
-    private void zeroOnePack(int[] f, int w, int c){
-        //V = f.length-1
-        for (int v = f.length-1; v >= c; v--){
-            f[v] = Math.max(f[v], f[v-c] + w);
-        }
-    }
-}
-```
 
-常数项优化后实现：
-
-```java
-class Solution {
-    public int solve(int[] w, int[] c, int N, int V){
-        int[] sumC = new int[N];//sumC[i] = sum{w[i]..w[N-1]
-        sumC[N-1] = c[N-1];
-        for (int i = N-2; i>=0; i--){
-            sumC[i] = c[i] + sumC[i+1];
-        }
-        int[] f = new int[V+1];//初始化为0
-        for (int i = 0; i < N; i++){
-            zeroOnePack(f, w[i], c[i], V, sumC, i);
-        }
-        return f[V];
-    }
-    private void zeroOnePack(int[] f, int w, int c, int V, int[] sumC, int i){
-        for (int v = V; v >= Math.max(c, V - sumC[i]); v--){
-            f[v] = Math.max(f[v], f[v-c] + w);
+    private void completePack(int[] f, int w, int c){
+        //V = f.length - 1
+        for (int v = c; v < f.length; v++){
+            f[v] = Math.max(f[v], f[v-c] +w);
         }
     }
 }
