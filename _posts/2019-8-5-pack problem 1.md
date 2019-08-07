@@ -132,6 +132,40 @@ for i = 1 to N
 
 #### 6. Java代码实现
 
+二维数组实现
+
+```java
+class Solution{
+    public boolean solve(Integer[] w, Integer[] c, int V){
+        //N = c.length
+        double[][] f = new double[c.length+1][V+1];
+        for (int v = 1; v <= V; v++){
+            //除0外初始化为负无穷
+            f[0][v] = Double.NEGATIVE_INFINITY;
+        }
+        for (int i = 1; i <= c.length; i++){
+            zeroOnePack(f, w[i-1], c[i-1], i);
+        }
+        return f[c.length][V] != Double.NEGATIVE_INFINITY;
+    }
+
+    private void zeroOnePack(double[][] f, int w, int c, int i){
+        //V = f[0].length - 1
+        for (int v = 0; v < f[0].length; v++){
+            if (v-c < 0){
+                f[i][v] = f[i-1][v];
+            }else {
+                f[i][v] = Math.max(f[i-1][v], f[i-1][v-c] + w);
+            }
+        }
+    }
+}
+```
+
+
+
+一维数组实现
+
 ```java
 class Solution {
     public int solve(int[] w, int[] c, int N, int V){
